@@ -36,23 +36,23 @@ def mask_image():
         img_base64=get_b64_string(image)
         end=time.time()
         if img_base64!=0:
-            return render_template('./result.html',img_base64=img_base64,time=end-start)
+            return render_template('result.html',img_base64=img_base64,time=end-start)
         else:
             error_msg="Sorry, you have selected wrong image!"
-            return render_template('./error.html',error_message=error_msg)
+            return render_template('error.html',error_message=error_msg)
     except KeyError:
         error_msg="Sorry, you have not selected proper image file!"
-        return render_template('./error.html',error_message=error_msg)
+        return render_template('error.html',error_message=error_msg)
     except Exception as e:
-        return render_template('./error.html',error_message=e)
+        return render_template('error.html',error_message=e)
 
 @app.route('/') 
 def home():  
-    return render_template('./index.html')
+    return render_template('index.html')
 
 @app.route('/webcam',methods=['POST']) 
 def webcam():  
-    return render_template('./webcam_result.html')
+    return render_template('webcam_result.html')
 
 @app.route('/video')
 def video():
@@ -64,7 +64,7 @@ def done():
     if camera.isOpened():
         print("Releasing cam feed")
         camera.release()
-    return render_template('./index.html')
+    return render_template('index.html')
   
 if __name__ =='__main__':  
     app.run(debug = True)

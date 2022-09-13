@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>YOLO-Object Detection</title>
+  <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/goktug97/PyYOLO/master/pyyologo.png">
+	<link rel="stylesheet" type="text/css" href="../static/index.css">
+	<script
+			  src="https://code.jquery.com/jquery-3.3.1.min.js"
+			  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+			  crossorigin="anonymous"></script>
+	<script type="text/javascript" src="../static/index.js"></script>
+  <style>
+    .button {
+      padding: 10px 20px;
+      font-size: 24px;
+      text-align: center;
+      cursor: pointer;
+      outline: none;
+      color: #fff;
+      background-color: #04AA6D;
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0 9px #999;
+    }
+    
+    .button:hover {background-color: #3e8e41}
+    
+    .button:active {
+      background-color: #3e8e41;
+      box-shadow: 0 5px #666;
+      transform: translateY(4px);
+    }
+    </style>
+</head>
+<body>
+
+
+<div class='App'>
+    <header class='App-header'>
+      <img  src="https://raw.githubusercontent.com/goktug97/PyYOLO/master/pyyologo.png" style="width:200px;height:80px;position: absolute;top: 8px;left: 16px;" alt="yolov5"> 
+        <p><u>
+          Face Mask Detection
+        </u></p>
+        <form action="/webcam" method="post">
+          <button class="button" name="send" id = "sendbutton">WebCam</button><br><br>
+        </form>
+        <div className="pre_img">
+          <span><img id="imagebox" src=""></span>
+        </div>
+        <form action="/detectObject" enctype="multipart/form-data" method="post">
+          <input id="imageinput" type="file" name="image" onchange="readUrl(this)">
+          <button class="button" name="send" id = "sendbutton">Send Image</button>
+        </form>
+			
+	</header>
+</div>
+
+
+</body>
+</html>

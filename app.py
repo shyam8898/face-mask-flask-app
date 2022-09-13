@@ -7,7 +7,7 @@ import time
 app = Flask(__name__)
 
 def generate_frames():
-    model =  torch.hub.load('yolov5', 'custom', source ='local', path='last.pt',force_reload=True)
+    model =  torch.hub.load('ultralytics/yolov5', 'custom', path='last.pt',force_reload=True)
     classes = model.names
     global camera
     camera= cv2.VideoCapture(0)
